@@ -1,0 +1,689 @@
+{
+  "dataset_name": "CUAD-SYNTHETIC",
+  "version": "1.0",
+  "description": "Synthetic contract clauses inspired by the CUAD dataset for legal AI research and agent-based analysis.",
+  "total_clauses": 100,
+  "categories": ["Confidentiality", "Termination", "Limitation of Liability", "Governing Law", "Data Usage", "Indemnification", "Payment Terms", "IP Rights", "Non-Compete", "Warranties", "Force Majeure", "Assignment", "Arbitration", "Amendment", "Audit Rights"],
+  "clauses": [
+    {
+      "id": "C001",
+      "clause_type": "Confidentiality",
+      "text": "All confidential information disclosed by either party during the term of this Agreement shall be kept strictly confidential and shall not be disclosed to any third party without prior written consent, except as required by law.",
+      "risk_indicators": ["data leakage", "regulatory breach"],
+      "compliance_tags": ["GDPR", "Data Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C002",
+      "clause_type": "Termination",
+      "text": "This Agreement may be terminated by either party at any time without prior notice or cause, and without any liability arising from such termination.",
+      "risk_indicators": ["sudden termination", "business instability"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "critical"
+    },
+    {
+      "id": "C003",
+      "clause_type": "Limitation of Liability",
+      "text": "In no event shall the Company be liable for any indirect, incidental, consequential, or punitive damages, including loss of profits or data, even if advised of the possibility of such damages.",
+      "risk_indicators": ["unfair liability shift", "potential loss exposure"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "high"
+    },
+    {
+      "id": "C004",
+      "clause_type": "Governing Law",
+      "text": "This Agreement shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of laws principles.",
+      "risk_indicators": ["jurisdiction mismatch"],
+      "compliance_tags": ["Jurisdiction"],
+      "severity": "medium"
+    },
+    {
+      "id": "C005",
+      "clause_type": "Data Usage",
+      "text": "The Company may collect, store, process, and share user data with affiliated third parties for analytics, marketing, and operational purposes.",
+      "risk_indicators": ["privacy violation", "third-party sharing"],
+      "compliance_tags": ["GDPR", "CCPA"],
+      "severity": "critical"
+    },
+    {
+      "id": "C006",
+      "clause_type": "Indemnification",
+      "text": "The user agrees to indemnify and hold harmless the Company from any claims, damages, or expenses arising out of the user's misuse of the services.",
+      "risk_indicators": ["one-sided indemnity"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C007",
+      "clause_type": "Payment Terms",
+      "text": "All payments shall be non-refundable and must be made within seven (7) days of invoice issuance, regardless of service performance.",
+      "risk_indicators": ["unfair payment terms", "no refund policy"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C008",
+      "clause_type": "Confidentiality",
+      "text": "Confidential information may be disclosed to employees and contractors on a need-to-know basis, provided such individuals are bound by confidentiality obligations.",
+      "risk_indicators": ["internal data exposure"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "medium"
+    },
+    {
+      "id": "C009",
+      "clause_type": "Termination",
+      "text": "Either party may terminate this Agreement upon thirty (30) days written notice if the other party breaches any material term and fails to cure within fifteen (15) days.",
+      "risk_indicators": ["breach risk"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C010",
+      "clause_type": "IP Rights",
+      "text": "All intellectual property rights created during the term of this Agreement shall be the sole and exclusive property of the Company.",
+      "risk_indicators": ["IP ownership loss"],
+      "compliance_tags": ["Intellectual Property"],
+      "severity": "critical"
+    },
+    {
+      "id": "C011",
+      "clause_type": "Non-Compete",
+      "text": "The Contractor agrees not to engage in any competing business activities within a 100-mile radius for a period of two (2) years following termination.",
+      "risk_indicators": ["restrictive covenant", "employment limitation"],
+      "compliance_tags": ["Employment Law"],
+      "severity": "high"
+    },
+    {
+      "id": "C012",
+      "clause_type": "Warranties",
+      "text": "The Company disclaims all warranties, express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.",
+      "risk_indicators": ["no warranty protection"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C013",
+      "clause_type": "Force Majeure",
+      "text": "Neither party shall be liable for any failure to perform due to events beyond their reasonable control, including natural disasters, war, or government actions.",
+      "risk_indicators": ["performance excuse"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C014",
+      "clause_type": "Assignment",
+      "text": "This Agreement may not be assigned by either party without the prior written consent of the other party.",
+      "risk_indicators": ["transfer restriction"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C015",
+      "clause_type": "Arbitration",
+      "text": "Any disputes arising under this Agreement shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.",
+      "risk_indicators": ["limited legal recourse"],
+      "compliance_tags": ["Dispute Resolution"],
+      "severity": "medium"
+    },
+    {
+      "id": "C016",
+      "clause_type": "Confidentiality",
+      "text": "The receiving party shall protect confidential information with the same degree of care it uses for its own confidential information, but in no event less than reasonable care.",
+      "risk_indicators": ["subjective standard"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "medium"
+    },
+    {
+      "id": "C017",
+      "clause_type": "Data Usage",
+      "text": "User data may be retained indefinitely and used for product improvement, research, and development purposes without further notice.",
+      "risk_indicators": ["indefinite retention", "broad usage rights"],
+      "compliance_tags": ["GDPR", "CCPA"],
+      "severity": "critical"
+    },
+    {
+      "id": "C018",
+      "clause_type": "Limitation of Liability",
+      "text": "The Company's total liability under this Agreement shall not exceed the amount paid by the customer in the twelve (12) months preceding the claim.",
+      "risk_indicators": ["capped liability"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C019",
+      "clause_type": "Payment Terms",
+      "text": "Invoices are due within fifteen (15) days of receipt. Late payments will incur interest at a rate of 1.5% per month.",
+      "risk_indicators": ["interest charges"],
+      "compliance_tags": ["Finance"],
+      "severity": "low"
+    },
+    {
+      "id": "C020",
+      "clause_type": "Termination",
+      "text": "This Agreement shall automatically terminate upon the insolvency or bankruptcy of either party.",
+      "risk_indicators": ["automatic termination"],
+      "compliance_tags": ["Bankruptcy Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C021",
+      "clause_type": "Audit Rights",
+      "text": "The Company reserves the right to audit the Customer's use of the services at any time with 48 hours notice.",
+      "risk_indicators": ["intrusive audits"],
+      "compliance_tags": ["Compliance"],
+      "severity": "medium"
+    },
+    {
+      "id": "C022",
+      "clause_type": "Amendment",
+      "text": "This Agreement may be amended or modified only by written agreement signed by both parties.",
+      "risk_indicators": ["formal amendment requirement"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C023",
+      "clause_type": "Indemnification",
+      "text": "Each party shall indemnify the other against third-party claims arising from its breach of this Agreement or negligent acts.",
+      "risk_indicators": ["mutual indemnity"],
+      "compliance_tags": ["Liability"],
+      "severity": "medium"
+    },
+    {
+      "id": "C024",
+      "clause_type": "IP Rights",
+      "text": "The Customer grants the Company a perpetual, irrevocable license to use any feedback or suggestions provided regarding the services.",
+      "risk_indicators": ["broad license grant"],
+      "compliance_tags": ["Intellectual Property"],
+      "severity": "high"
+    },
+    {
+      "id": "C025",
+      "clause_type": "Governing Law",
+      "text": "This Agreement shall be governed by the laws of Delaware, and the parties consent to exclusive jurisdiction in Delaware courts.",
+      "risk_indicators": ["inconvenient forum"],
+      "compliance_tags": ["Jurisdiction"],
+      "severity": "medium"
+    },
+    {
+      "id": "C026",
+      "clause_type": "Confidentiality",
+      "text": "Confidential information shall remain confidential for a period of five (5) years following disclosure.",
+      "risk_indicators": ["limited confidentiality term"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "low"
+    },
+    {
+      "id": "C027",
+      "clause_type": "Non-Compete",
+      "text": "During the term and for six (6) months thereafter, the Employee shall not solicit any customers or employees of the Company.",
+      "risk_indicators": ["non-solicitation"],
+      "compliance_tags": ["Employment Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C028",
+      "clause_type": "Warranties",
+      "text": "The Company warrants that services will be performed in a professional and workmanlike manner in accordance with industry standards.",
+      "risk_indicators": ["limited warranty"],
+      "compliance_tags": ["Quality Assurance"],
+      "severity": "low"
+    },
+    {
+      "id": "C029",
+      "clause_type": "Data Usage",
+      "text": "The Company may anonymize and aggregate user data for statistical analysis and may share such data with third parties.",
+      "risk_indicators": ["data aggregation", "third-party sharing"],
+      "compliance_tags": ["GDPR", "Privacy"],
+      "severity": "medium"
+    },
+    {
+      "id": "C030",
+      "clause_type": "Payment Terms",
+      "text": "Subscription fees are billed annually in advance and are non-refundable, even if services are terminated early.",
+      "risk_indicators": ["no prorated refunds"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C031",
+      "clause_type": "Force Majeure",
+      "text": "Performance obligations shall be suspended during any force majeure event, and the term shall be extended accordingly.",
+      "risk_indicators": ["timeline extension"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C032",
+      "clause_type": "Limitation of Liability",
+      "text": "Under no circumstances shall either party be liable for any special, exemplary, or consequential damages whatsoever.",
+      "risk_indicators": ["broad liability exclusion"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "high"
+    },
+    {
+      "id": "C033",
+      "clause_type": "Termination",
+      "text": "The Company may suspend or terminate services immediately if Customer violates any terms, without refund or liability.",
+      "risk_indicators": ["immediate termination", "no due process"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "critical"
+    },
+    {
+      "id": "C034",
+      "clause_type": "Arbitration",
+      "text": "The parties waive their right to a jury trial and agree to resolve disputes through individual arbitration only, with no class actions permitted.",
+      "risk_indicators": ["class action waiver"],
+      "compliance_tags": ["Dispute Resolution"],
+      "severity": "high"
+    },
+    {
+      "id": "C035",
+      "clause_type": "Assignment",
+      "text": "The Company may assign this Agreement to any affiliate or successor without Customer consent.",
+      "risk_indicators": ["unilateral assignment"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C036",
+      "clause_type": "Confidentiality",
+      "text": "Trade secrets and proprietary algorithms shall remain confidential in perpetuity, even after Agreement termination.",
+      "risk_indicators": ["perpetual obligation"],
+      "compliance_tags": ["Trade Secrets"],
+      "severity": "high"
+    },
+    {
+      "id": "C037",
+      "clause_type": "IP Rights",
+      "text": "Any modifications, enhancements, or derivative works created by Customer shall become the property of the Company.",
+      "risk_indicators": ["derivative work ownership"],
+      "compliance_tags": ["Intellectual Property"],
+      "severity": "critical"
+    },
+    {
+      "id": "C038",
+      "clause_type": "Indemnification",
+      "text": "Customer shall defend, indemnify, and hold harmless the Company from all claims related to Customer's use of the services.",
+      "risk_indicators": ["broad indemnity scope"],
+      "compliance_tags": ["Liability"],
+      "severity": "high"
+    },
+    {
+      "id": "C039",
+      "clause_type": "Data Usage",
+      "text": "By using the service, you grant the Company an irrevocable, worldwide license to use, reproduce, and distribute your content.",
+      "risk_indicators": ["irrevocable license", "broad rights"],
+      "compliance_tags": ["Content Rights"],
+      "severity": "critical"
+    },
+    {
+      "id": "C040",
+      "clause_type": "Warranties",
+      "text": "Services are provided 'as is' without warranty of any kind, and the Company does not warrant uninterrupted or error-free operation.",
+      "risk_indicators": ["as-is service"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C041",
+      "clause_type": "Governing Law",
+      "text": "Any legal action must be brought within one (1) year of the claim arising, or such claim shall be permanently barred.",
+      "risk_indicators": ["shortened statute of limitations"],
+      "compliance_tags": ["Jurisdiction"],
+      "severity": "high"
+    },
+    {
+      "id": "C042",
+      "clause_type": "Amendment",
+      "text": "The Company reserves the right to modify these terms at any time by posting updated terms on its website, with continued use constituting acceptance.",
+      "risk_indicators": ["unilateral amendment", "deemed acceptance"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "critical"
+    },
+    {
+      "id": "C043",
+      "clause_type": "Payment Terms",
+      "text": "Prices are subject to change at any time without notice, and Customer will be charged the then-current rates.",
+      "risk_indicators": ["variable pricing"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C044",
+      "clause_type": "Audit Rights",
+      "text": "Customer shall maintain records for three (3) years and provide access to Company auditors upon reasonable request.",
+      "risk_indicators": ["record retention"],
+      "compliance_tags": ["Compliance"],
+      "severity": "low"
+    },
+    {
+      "id": "C045",
+      "clause_type": "Non-Compete",
+      "text": "The Consultant shall not provide services to any competitor for the duration of this engagement and twelve (12) months thereafter.",
+      "risk_indicators": ["post-term restriction"],
+      "compliance_tags": ["Employment Law"],
+      "severity": "high"
+    },
+    {
+      "id": "C046",
+      "clause_type": "Confidentiality",
+      "text": "All materials, documents, and information shared during negotiations shall be considered confidential, whether or not marked as such.",
+      "risk_indicators": ["broad confidentiality scope"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "medium"
+    },
+    {
+      "id": "C047",
+      "clause_type": "Termination",
+      "text": "Upon termination for any reason, Customer must immediately cease all use of the services and destroy all related materials.",
+      "risk_indicators": ["immediate cessation"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C048",
+      "clause_type": "Limitation of Liability",
+      "text": "The Company shall not be liable for any damages arising from unauthorized access to or use of Customer data.",
+      "risk_indicators": ["security breach exemption"],
+      "compliance_tags": ["Cybersecurity"],
+      "severity": "critical"
+    },
+    {
+      "id": "C049",
+      "clause_type": "Data Usage",
+      "text": "Customer data may be stored on servers located in any country, and Customer consents to international data transfers.",
+      "risk_indicators": ["international transfer", "jurisdiction issues"],
+      "compliance_tags": ["GDPR", "Data Sovereignty"],
+      "severity": "high"
+    },
+    {
+      "id": "C050",
+      "clause_type": "IP Rights",
+      "text": "Customer retains ownership of its pre-existing IP, but grants Company a license to use such IP as necessary to provide the services.",
+      "risk_indicators": ["implied license"],
+      "compliance_tags": ["Intellectual Property"],
+      "severity": "medium"
+    },
+    {
+      "id": "C051",
+      "clause_type": "Indemnification",
+      "text": "The Company shall indemnify Customer only for claims directly resulting from Company's gross negligence or willful misconduct.",
+      "risk_indicators": ["high indemnity threshold"],
+      "compliance_tags": ["Liability"],
+      "severity": "high"
+    },
+    {
+      "id": "C052",
+      "clause_type": "Force Majeure",
+      "text": "Pandemic, epidemic, or public health emergency shall constitute a force majeure event excusing performance.",
+      "risk_indicators": ["pandemic clause"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C053",
+      "clause_type": "Arbitration",
+      "text": "Arbitration shall take place in New York City, and each party shall bear its own costs and expenses.",
+      "risk_indicators": ["cost allocation", "location burden"],
+      "compliance_tags": ["Dispute Resolution"],
+      "severity": "medium"
+    },
+    {
+      "id": "C054",
+      "clause_type": "Assignment",
+      "text": "Customer may not assign this Agreement without Company's written consent, which may be withheld in Company's sole discretion.",
+      "risk_indicators": ["assignment restriction"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C055",
+      "clause_type": "Warranties",
+      "text": "Customer warrants that it has all necessary rights and permissions to provide Company with any content or data under this Agreement.",
+      "risk_indicators": ["customer warranty burden"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C056",
+      "clause_type": "Governing Law",
+      "text": "This Agreement shall be governed by the laws of England and Wales, and disputes shall be subject to the exclusive jurisdiction of London courts.",
+      "risk_indicators": ["foreign jurisdiction"],
+      "compliance_tags": ["International Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C057",
+      "clause_type": "Payment Terms",
+      "text": "All fees are exclusive of taxes, and Customer is responsible for all applicable sales, use, and value-added taxes.",
+      "risk_indicators": ["additional tax burden"],
+      "compliance_tags": ["Tax Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C058",
+      "clause_type": "Confidentiality",
+      "text": "Either party may disclose confidential information if required by law, provided reasonable notice is given to the other party.",
+      "risk_indicators": ["legal disclosure exception"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "low"
+    },
+    {
+      "id": "C059",
+      "clause_type": "Data Usage",
+      "text": "The Company uses cookies and tracking technologies to monitor user behavior and improve services, and users consent to such use.",
+      "risk_indicators": ["tracking consent"],
+      "compliance_tags": ["GDPR", "ePrivacy"],
+      "severity": "medium"
+    },
+    {
+      "id": "C060",
+      "clause_type": "Termination",
+      "text": "Either party may terminate for convenience with ninety (90) days written notice, provided all outstanding fees are paid.",
+      "risk_indicators": ["payment obligation continues"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C061",
+      "clause_type": "IP Rights",
+      "text": "All trademarks, logos, and brand names displayed in connection with the services remain the property of their respective owners.",
+      "risk_indicators": ["third-party IP"],
+      "compliance_tags": ["Trademark Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C062",
+      "clause_type": "Limitation of Liability",
+      "text": "Notwithstanding any other provision, the Company's liability for data loss shall not exceed the cost of recreating such data from backups.",
+      "risk_indicators": ["data loss limitation"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C063",
+      "clause_type": "Non-Compete",
+      "text": "The parties acknowledge that geographic restrictions may not be enforceable in certain jurisdictions and agree to substitute reasonable alternatives.",
+      "risk_indicators": ["enforceability uncertainty"],
+      "compliance_tags": ["Employment Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C064",
+      "clause_type": "Indemnification",
+      "text": "Customer shall reimburse Company for all reasonable legal fees incurred in defending claims arising from Customer's breach.",
+      "risk_indicators": ["legal fee obligation"],
+      "compliance_tags": ["Liability"],
+      "severity": "high"
+    },
+    {
+      "id": "C065",
+      "clause_type": "Amendment",
+      "text": "No waiver of any provision shall be deemed a waiver of any other provision or subsequent breach of the same provision.",
+      "risk_indicators": ["strict enforcement"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C066",
+      "clause_type": "Audit Rights",
+      "text": "If an audit reveals underpayment exceeding 5%, Customer shall pay audit costs in addition to the underpayment.",
+      "risk_indicators": ["audit cost penalty"],
+      "compliance_tags": ["Compliance"],
+      "severity": "medium"
+    },
+    {
+      "id": "C067",
+      "clause_type": "Warranties",
+      "text": "The Company warrants compliance with applicable data protection laws but makes no warranties regarding third-party components.",
+      "risk_indicators": ["third-party exemption"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "medium"
+    },
+    {
+      "id": "C068",
+      "clause_type": "Force Majeure",
+      "text": "If a force majeure event continues for more than sixty (60) days, either party may terminate this Agreement without liability.",
+      "risk_indicators": ["extended force majeure"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C069",
+      "clause_type": "Data Usage",
+      "text": "Customer data will be retained for seven (7) years after termination for legal and compliance purposes.",
+      "risk_indicators": ["extended retention"],
+      "compliance_tags": ["GDPR", "Data Retention"],
+      "severity": "medium"
+    },
+    {
+      "id": "C070",
+      "clause_type": "Governing Law",
+      "text": "The parties irrevocably submit to the jurisdiction of the courts of Singapore and waive any objection to venue.",
+      "risk_indicators": ["venue waiver"],
+      "compliance_tags": ["Jurisdiction"],
+      "severity": "medium"
+    },
+    {
+      "id": "C071",
+      "clause_type": "Payment Terms",
+      "text": "Customer shall pay a setup fee equal to 50% of the first year's subscription, which is non-refundable.",
+      "risk_indicators": ["high upfront cost"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "high"
+    },
+    {
+      "id": "C072",
+      "clause_type": "Confidentiality",
+      "text": "The obligation of confidentiality shall not apply to information that was independently developed without reference to confidential information.",
+      "risk_indicators": ["independent development exception"],
+      "compliance_tags": ["Trade Secrets"],
+      "severity": "low"
+    },
+    {
+      "id": "C073",
+      "clause_type": "Termination",
+      "text": "Upon termination, the Company shall provide Customer with a data export in a standard format within thirty (30) days.",
+      "risk_indicators": ["data portability"],
+      "compliance_tags": ["GDPR"],
+      "severity": "low"
+    },
+    {
+      "id": "C074",
+      "clause_type": "IP Rights",
+      "text": "Customer agrees not to reverse engineer, decompile, or disassemble any portion of the software or services.",
+      "risk_indicators": ["reverse engineering prohibition"],
+      "compliance_tags": ["Software License"],
+      "severity": "medium"
+    },
+    {
+      "id": "C075",
+      "clause_type": "Arbitration",
+      "text": "The arbitrator's decision shall be final and binding, and judgment may be entered in any court of competent jurisdiction.",
+      "risk_indicators": ["no appeal"],
+      "compliance_tags": ["Dispute Resolution"],
+      "severity": "medium"
+    },
+    {
+      "id": "C076",
+      "clause_type": "Limitation of Liability",
+      "text": "The Company shall not be liable for any failure or delay in performance resulting from Customer's failure to meet its obligations.",
+      "risk_indicators": ["customer dependency"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C077",
+      "clause_type": "Indemnification",
+      "text": "Indemnification obligations shall survive termination or expiration of this Agreement indefinitely.",
+      "risk_indicators": ["perpetual indemnity"],
+      "compliance_tags": ["Liability"],
+      "severity": "high"
+    },
+    {
+      "id": "C078",
+      "clause_type": "Data Usage",
+      "text": "The Company may use Customer testimonials and logos for marketing purposes unless Customer opts out in writing.",
+      "risk_indicators": ["marketing use"],
+      "compliance_tags": ["Privacy", "Marketing"],
+      "severity": "low"
+    },
+    {
+      "id": "C079",
+      "clause_type": "Assignment",
+      "text": "In the event of a merger or acquisition, this Agreement shall automatically transfer to the successor entity.",
+      "risk_indicators": ["automatic transfer"],
+      "compliance_tags": ["Corporate Law"],
+      "severity": "medium"
+    },
+    {
+      "id": "C080",
+      "clause_type": "Warranties",
+      "text": "Customer acknowledges that the Company has made no representations or warranties beyond those expressly stated in this Agreement.",
+      "risk_indicators": ["integration clause"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C081",
+      "clause_type": "Non-Compete",
+      "text": "This non-compete provision shall be severable, and if any part is unenforceable, the remaining portions shall remain in effect.",
+      "risk_indicators": ["severability"],
+      "compliance_tags": ["Employment Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C082",
+      "clause_type": "Payment Terms",
+      "text": "Customer authorizes Company to automatically charge the payment method on file for all recurring fees.",
+      "risk_indicators": ["auto-renewal"],
+      "compliance_tags": ["Consumer Protection"],
+      "severity": "medium"
+    },
+    {
+      "id": "C083",
+      "clause_type": "Governing Law",
+      "text": "The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement.",
+      "risk_indicators": ["CISG exclusion"],
+      "compliance_tags": ["International Law"],
+      "severity": "low"
+    },
+    {
+      "id": "C084",
+      "clause_type": "Confidentiality",
+      "text": "Upon request, the receiving party shall certify in writing that all confidential information has been returned or destroyed.",
+      "risk_indicators": ["certification requirement"],
+      "compliance_tags": ["Data Protection"],
+      "severity": "low"
+    },
+    {
+      "id": "C085",
+      "clause_type": "Force Majeure",
+      "text": "The party affected by a force majeure event shall provide prompt written notice with details of the event and expected duration.",
+      "risk_indicators": ["notice requirement"],
+      "compliance_tags": ["Contract Law"],
+      "severity": "low"
+    }
+    ]
+}
