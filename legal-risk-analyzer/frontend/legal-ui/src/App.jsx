@@ -2,10 +2,13 @@ import { useState } from 'react'
 import Sidebar from './components/layout/Sidebar'
 import ChatContainer from './components/chat/ChatContainer'
 import Header from './components/layout/Header'
+import PerformanceDashboard from './components/performance/PerformanceDashboard'
 
 function App() {
   const [currentAnalysis, setCurrentAnalysis] = useState(null)
   const [analyses, setAnalyses] = useState([])
+  const [demoMode, setDemoMode] = useState(true) // default ON for presentation without backend
+  const [activeView, setActiveView] = useState('chat')
 
   const handleNewAnalysis = () => {
     setCurrentAnalysis(null)
@@ -21,7 +24,7 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen overflow-hidden bg-legal-navy">
+    <div className="flex h-screen overflow-hidden bg-legal-navy bg-mesh">
       <Sidebar 
         onNewAnalysis={handleNewAnalysis}
         analyses={analyses}
@@ -29,11 +32,21 @@ function App() {
         currentAnalysis={currentAnalysis}
       />
       <div className="flex flex-col flex-1 overflow-hidden">
-        <Header />
-        <ChatContainer 
-          currentAnalysis={currentAnalysis}
-          onAnalysisComplete={handleAnalysisComplete}
+        <Header
+          demoMode={demoMode}
+          onDemoModeChange={setDemoMode}
+          activeView={activeView}
+          onViewChange={setActiveView}
         />
+        {activeView === 'chat' ? (
+          <ChatContainer
+            currentAnalysis={currentAnalysis}
+            onAnalysisComplete={handleAnalysisComplete}
+            demoMode={demoMode}
+          />
+        ) : (
+          <PerformanceDashboard />
+        )}
       </div>
     </div>
   )

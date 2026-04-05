@@ -9,22 +9,41 @@ class MultilingualAgent:
     def __init__(self):
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-    def translate(self, text: str, target_language: str):
+    def translate(self, text: str, target_language: str, context: list = None):
         """
-        Translates legal text to the target language.
+        Translates legal text to the target language using provided context.
         """
+        
+        context_str = ""
+        if context:
+            for i, c in enumerate(context, 1):
+                context_str += f"Clause {i} ({c.get('clause_type', 'Legal')}):\n{c.get('text', '')}\n\n"
+
+        if context_str:
+            translation_section = f"LEGAL CONTEXT TO TRANSLATE:\n{context_str}"
+        else:
+            translation_section = f"TEXT TO TRANSLATE:\n{text}"
+
         prompt = f"""
 You are a professional legal translator.
 
-Text to translate:
-\"\"\"{text}\"\"\"
+USER REQUEST: "{text}"
+TARGET LANGUAGE: {target_language}
 
-Target Language: {target_language}
+{translation_section}
 
-Tasks:
-1. Translate the legal text accurately while preserving legal terminology and context.
-2. Provide a brief summary of the translated text in the target language.
-3. Output ONLY valid JSON with keys: translated_text, summary.
+TASKS:
+1. If 'LEGAL CONTEXT' is provided, translate the specific clause(s) the user is asking for in their request.
+2. If the user request is a general command (e.g., "translate this to Hindi"), translate the core legal content provided in the context.
+3. If no context is provided, translate the user request itself.
+4. Preserve all legal terminology and professional tone.
+5. Provide a brief summary of the translated content in the target language.
+
+Output ONLY valid JSON:
+{{
+  "translated_text": "...",
+  "summary": "..."
+}}
 """
 
         try:

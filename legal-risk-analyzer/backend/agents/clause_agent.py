@@ -81,7 +81,8 @@ Tasks:
                     {
                         "id": c["id"],
                         "clause_type": c["clause_type"],
-                        "severity": c["severity"]
+                        "severity": c["severity"],
+                        "text": c["text"]
                     } for c in similar_clauses
                 ]
             }

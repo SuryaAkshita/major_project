@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Send, Paperclip, Mic, X, MicOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export default function InputBar({ onSend, disabled }) {
+export default function InputBar({ onSend, disabled, demoMode }) {
   const [input, setInput] = useState('')
   const [selectedFile, setSelectedFile] = useState(null)
   const [isRecording, setIsRecording] = useState(false)
@@ -24,7 +24,6 @@ export default function InputBar({ onSend, disabled }) {
           transcript += event.results[i][0].transcript
         }
         setInput(prev => {
-          // Add space if there's existing text and the new transcript doesn't start with punctuation
           const prefix = prev.trim() ? (prev.endsWith(' ') ? '' : ' ') : ''
           return prev + prefix + transcript
         })
@@ -68,25 +67,18 @@ export default function InputBar({ onSend, disabled }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
-    // Stop recording if active
+
     if (isRecording) {
       recognitionRef.current?.stop()
       setIsRecording(false)
     }
-    
-    // If file is selected, send only the file (ignore text)
-    if (selectedFile) {
-      onSend('', selectedFile)  // Empty string for text when file is present
+
+    // Send both text and file if present
+    if (selectedFile || input.trim()) {
+      onSend(input, selectedFile)
+      setInput('')
       setSelectedFile(null)
       if (fileInputRef.current) fileInputRef.current.value = ''
-      return
-    }
-    
-    // Otherwise send text only
-    if (input.trim()) {
-      onSend(input, null)
-      setInput('')
     }
   }
 
@@ -94,12 +86,7 @@ export default function InputBar({ onSend, disabled }) {
     const file = e.target.files[0]
     if (file) {
       setSelectedFile(file)
-      // Optionally clear text input when file is selected
-      setInput('')
-      if (isRecording) {
-        recognitionRef.current?.stop()
-        setIsRecording(false)
-      }
+      // Do NOT clear input anymore
     }
   }
 
@@ -109,12 +96,14 @@ export default function InputBar({ onSend, disabled }) {
   }
 
   return (
-    <div className="border-t border-legal-slate bg-legal-charcoal">
+    <div className="border-t border-legal-slate/60 bg-legal-charcoal/80 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-6 py-4">
         {/* File Preview */}
         {selectedFile && (
-          <div className="mb-3 flex items-center gap-3 px-4 py-3 bg-legal-slate/50 rounded-lg border border-legal-steel/30">
-            <Paperclip className="w-4 h-4 text-legal-steel" />
+          <div className="mb-3 flex items-center gap-3 px-4 py-3 rounded-xl bg-legal-slate/30 border border-legal-steel/40 shadow-card">
+            <div className="p-2 rounded-lg bg-legal-steel/15">
+              <Paperclip className="w-4 h-4 text-legal-steel" />
+            </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm text-legal-off-white font-medium truncate">
                 {selectedFile.name}
@@ -125,7 +114,7 @@ export default function InputBar({ onSend, disabled }) {
             </div>
             <button
               onClick={removeFile}
-              className="text-legal-gray hover:text-red-400 transition-colors p-1"
+              className="p-2 rounded-lg text-legal-gray hover:text-red-400 hover:bg-red-500/10 transition-colors"
               title="Remove file"
             >
               <X className="w-4 h-4" />
@@ -146,44 +135,42 @@ export default function InputBar({ onSend, disabled }) {
                 }
               }}
               placeholder={
-                selectedFile 
-                  ? "File attached. Click Send to analyze..." 
+                selectedFile
+                  ? "Add instructions for this file (e.g., 'Translate to Hindi')..."
                   : "Enter your legal query or paste contract text..."
               }
-              disabled={disabled || selectedFile}  // Disable text input when file is selected
+              disabled={disabled}
               rows={3}
               className={cn(
-                "w-full px-4 py-3 bg-legal-slate border border-legal-slate/50 rounded-lg",
+                "w-full px-4 py-3 rounded-xl bg-legal-slate/40 border border-legal-slate/50",
                 "text-legal-off-white placeholder-legal-gray",
-                "resize-none focus:outline-none focus:ring-2 focus:ring-legal-steel/50 focus:border-legal-steel/50",
+                "resize-none focus:outline-none focus:ring-2 focus:ring-legal-steel/40 focus:border-legal-steel/50",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
-                "font-sans text-sm leading-relaxed"
+                "font-sans text-sm leading-relaxed transition-shadow duration-200"
               )}
             />
             {isRecording && (
-              <div className="absolute top-3 right-3 flex items-center gap-2">
-                <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+              <div className="absolute top-3 right-3 flex items-center gap-2 px-2 py-1 rounded-lg bg-red-500/15 border border-red-500/30">
+                <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
                 <span className="text-[10px] text-red-400 font-medium uppercase tracking-wider">Recording</span>
               </div>
             )}
           </div>
 
           <div className="flex items-center gap-2">
-            {/* File Upload Button */}
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
               disabled={disabled}
               className={cn(
-                "p-3 rounded-lg border border-legal-slate/50",
-                "hover:bg-legal-slate/50 transition-colors",
+                "p-3 rounded-xl border border-legal-slate/50 hover:bg-legal-slate/40 transition-all",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
-                selectedFile && "bg-legal-steel/20 border-legal-steel/50",
+                selectedFile && "bg-legal-steel/20 border-legal-steel/50 text-legal-steel",
                 "text-legal-gray hover:text-legal-off-white"
               )}
               title="Attach document (PDF, DOCX)"
             >
-              <Paperclip className={cn("w-5 h-5", selectedFile && "text-legal-steel")} />
+              <Paperclip className="w-5 h-5" />
             </button>
             <input
               ref={fileInputRef}
@@ -193,43 +180,42 @@ export default function InputBar({ onSend, disabled }) {
               className="hidden"
             />
 
-            {/* Voice Input Button */}
             <button
               type="button"
               onClick={toggleRecording}
-              disabled={disabled || selectedFile}
+              disabled={disabled}
               className={cn(
-                "p-3 rounded-lg border border-legal-slate/50",
-                "hover:bg-legal-slate/50 transition-colors",
+                "p-3 rounded-xl border transition-all",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
-                isRecording && "bg-red-500/20 border-red-500/50",
-                "text-legal-gray hover:text-legal-off-white"
+                isRecording ? "bg-red-500/20 border-red-500/50 text-red-400" : "border-legal-slate/50 hover:bg-legal-slate/40 text-legal-gray hover:text-legal-off-white"
               )}
               title={isRecording ? "Stop recording" : "Voice input"}
             >
               {isRecording ? (
-                <MicOff className="w-5 h-5 text-red-400 animate-pulse" />
+                <MicOff className="w-5 h-5 animate-pulse" />
               ) : (
                 <Mic className="w-5 h-5" />
               )}
             </button>
 
-            {/* Send Button */}
             <button
               type="submit"
               disabled={disabled || (!input.trim() && !selectedFile)}
               className={cn(
-                "px-6 py-3 bg-legal-steel hover:bg-legal-steel/90",
-                "text-white rounded-lg font-medium transition-colors",
-                "disabled:opacity-50 disabled:cursor-not-allowed",
-                "flex items-center gap-2"
+                "px-6 py-3 rounded-xl font-medium transition-all flex items-center gap-2",
+                "bg-legal-steel hover:bg-legal-steel-light text-white shadow-lg hover:shadow-glow",
+                "disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]"
               )}
             >
               <Send className="w-4 h-4" />
-              <span>{selectedFile ? 'Analyze' : 'Send'}</span>
+              <span>Analyze</span>
             </button>
           </div>
         </form>
+        <p className="mt-2 text-center text-xs text-legal-gray/80">
+          {demoMode && 'Demo mode — sample responses, no backend required · '}
+          Enter to send · Shift+Enter for new line
+        </p>
       </div>
     </div>
   )

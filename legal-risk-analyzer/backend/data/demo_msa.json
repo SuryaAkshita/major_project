@@ -1,0 +1,64 @@
+{
+    "clauses": [
+        {
+            "id": "msa_parties",
+            "clause_type": "Preamble and Parties",
+            "text": "This Master Service Agreement is executed on the Effective Date by and between AlphaNova Technologies Private Limited, a company incorporated under the Companies Act, 2013, having its registered office in Bengaluru, India (the 'Service Provider'), and Orion Healthcare Solutions LLP, a limited liability partnership registered under the Limited Liability Partnership Act, 2008, having its principal office in Pune, India (the 'Client').",
+            "severity": "Low"
+        },
+        {
+            "id": "msa_scope",
+            "clause_type": "Scope of Services",
+            "text": "The Service Provider shall provide end-to-end services including but not limited to system architecture design, software development, OCR-based document digitization, AI/ML model training, deployment, integration, maintenance, monitoring, and support services. Each engagement shall be governed by a Statement of Work ('SOW') which shall be deemed incorporated herein by reference.",
+            "severity": "Low"
+        },
+        {
+            "id": "msa_acceptance",
+            "clause_type": "Service Levels and Acceptance",
+            "text": "The Service Provider shall perform the Services in accordance with industry standards, applicable healthcare regulations, and agreed service levels. Deliverables shall be subject to acceptance testing by the Client within fifteen (15) business days.",
+            "severity": "Medium"
+        },
+        {
+            "id": "msa_fees",
+            "clause_type": "Fees, Invoicing, and Taxation",
+            "text": "Fees shall be payable as specified in the applicable SOW and shall be exclusive of all taxes, duties, levies, and statutory charges. Invoices shall be paid within thirty (30) days from the invoice date. Late payments may accrue interest at 1.5% per month. Tax deduction at source shall be applied in accordance with Applicable Laws.",
+            "severity": "Medium"
+        },
+        {
+            "id": "msa_confidentiality",
+            "clause_type": "Confidentiality and Non-Disclosure",
+            "text": "Each Party shall maintain the confidentiality of all Confidential Information using no less than reasonable care. Confidentiality obligations shall survive termination for a period of five (5) years.",
+            "severity": "High"
+        },
+        {
+            "id": "msa_data_protection",
+            "clause_type": "Data Protection, Privacy, and Cybersecurity",
+            "text": "The Service Provider shall comply with the Digital Personal Data Protection Act, 2023, Information Technology Act, 2000, and sector-specific healthcare data regulations. The Client represents that it has obtained valid consent from all data principals. Data breaches shall be notified within seventy-two (72) hours.",
+            "severity": "Critical"
+        },
+        {
+            "id": "msa_compliance_risks",
+            "clause_type": "Regulatory and Compliance Risks",
+            "text": "The Parties acknowledge evolving regulatory frameworks governing artificial intelligence, automated decision-making, and healthcare analytics. Failure to comply may result in fines, reputational harm, suspension of licenses, or criminal liability.",
+            "severity": "High"
+        },
+        {
+            "id": "msa_ip_rights",
+            "clause_type": "Intellectual Property Rights",
+            "text": "Pre-existing intellectual property shall remain the sole property of the owning Party. Foreground IP created under this Agreement shall vest with the Client upon full payment.",
+            "severity": "Medium"
+        },
+        {
+            "id": "msa_indemnity",
+            "clause_type": "Indemnity",
+            "text": "The Service Provider shall indemnify the Client against third-party intellectual property infringement claims. The Client shall indemnify the Service Provider against misuse of Deliverables.",
+            "severity": "High"
+        },
+        {
+            "id": "msa_liability",
+            "clause_type": "Limitation of Liability",
+            "text": "Neither Party shall be liable for indirect, incidental, or consequential damages. Aggregate liability shall be capped at fees paid in the preceding twelve (12) months.",
+            "severity": "High"
+        }
+    ]
+}

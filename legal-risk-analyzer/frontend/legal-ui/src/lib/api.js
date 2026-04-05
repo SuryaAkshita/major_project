@@ -18,10 +18,13 @@ export const analyzeText = async (text) => {
   }
 }
 
-export const analyzeFile = async (file) => {
+export const analyzeFile = async (file, text = '') => {
   try {
     const formData = new FormData()
     formData.append('file', file)
+    if (text) {
+      formData.append('text', text)
+    }
 
     const response = await api.post('/analyze-upload', formData, {
       headers: {
@@ -31,6 +34,15 @@ export const analyzeFile = async (file) => {
     return response.data
   } catch (error) {
     throw new Error(error.response?.data?.error || 'Failed to analyze file')
+  }
+}
+
+export const getPerformanceDashboard = async () => {
+  try {
+    const response = await api.get('/performance/dashboard')
+    return response.data
+  } catch (error) {
+    throw new Error(error.response?.data?.error || 'Failed to fetch performance dashboard')
   }
 }
 
